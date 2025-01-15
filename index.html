@@ -67,7 +67,22 @@ p {
     <p>
       This is my personal project to sketch every single day in 2025. 
     </p>
-  <?php include('counter.php'); ?>
+ <h1>Visitor Count</h1>
+<p id="visitor-count">Loading visitor count...</p>
+
+<script>
+    // Retrieve current count from localStorage, or initialize it to 0 if not found
+    let visitorCount = parseInt(localStorage.getItem('visitorCount')) || 0;
+    
+    // Increment the count
+    visitorCount++;
+
+    // Store the new count back to localStorage
+    localStorage.setItem('visitorCount', visitorCount);
+
+    // Display the visitor count
+    document.getElementById('visitor-count').innerText = `This page has been visited ${visitorCount} times.`;
+</script>
 
     <div class="gallery">
       <div class="sketch">

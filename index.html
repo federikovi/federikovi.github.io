@@ -62,14 +62,13 @@ p {
 </head>
 <body>
 
-  <div class="container">
+<div class="container">
     <h1>Sketching my 2025</h1>
     <p>
       This is my personal project to sketch every single day in 2025. 
     </p>
 
-
-    <div class="gallery">
+  <div class="gallery">
       <div class="sketch">
         <div class="date">January 1st, 2025</div> 
         <img src="sketches/sketch1.jpg" alt="Sketch 1"> 
@@ -125,7 +124,7 @@ p {
         <img src="sketches/sketch11.jpg" alt="Sketch 11"> 
       </div>
 
-              <div class="sketch">
+      <div class="sketch">
         <div class="date">January 12th, 2025</div> 
         <img src="sketches/sketch12.jpg" alt="Sketch 12"> 
       </div>
@@ -135,29 +134,19 @@ p {
         <img src="sketches/sketch13.jpg" alt="Sketch 13"> 
       </div>
       
-        <div class="sketch">
+      <div class="sketch">
         <div class="date">January 14th, 2025</div> 
         <img src="sketches/sketch14.jpg" alt="Sketch 14"> 
       </div> 
-        
+
+      <div class="sketch">
+        <div class="date">January 15th, 2025</div> 
+        <img src="sketches/sketch15.jpg" alt="Sketch 15"> 
+      </div>
+
+
+      
     </div>
-
-  </div>
- <h1>Visitor Count</h1>
-<p id="visitor-count">Loading visitor count...</p>
-
-<script>
-    // Retrieve current count from localStorage, or initialize it to 0 if not found
-    let visitorCount = parseInt(localStorage.getItem('visitorCount')) || 0;
-    
-    // Increment the count
-    visitorCount++;
-
-    // Store the new count back to localStorage
-    localStorage.setItem('visitorCount', visitorCount);
-
-    // Display the visitor count
-    document.getElementById('visitor-count').innerText = `This page has been visited ${visitorCount} times.`;
-</script>
+</div>
 </body>
 </html>

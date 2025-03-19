@@ -1,106 +1,76 @@
-<!-- 
 
--->
-
-<!DOCTYPE html>
-<html lang=en>
+    
+   <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Sketching my 2025</title>
-  
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <style>body {
-  font-family: 'Roboto', sans-serif; /* Material Design font */
-  margin: 0;
-  padding: 20px;
-  background-color: #f5f5f5; /* Light gray background */
-}
-
-h1 {
-  font-size: 2rem;
-  color: #3f51b5; /* Material Design blue */
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1rem;
-  color: #757575; /* Material Design gray */
-  margin-bottom: 30px;
-}
-
-.container {
-  max-width: 1400px; /* Increased max-width for wider grid */
-  margin: 0 auto;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
-}
-
-.sketch {
-  border: 1px solid #e0e0e0; /* Light gray border */
-  padding: 15px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.sketch img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 5px; /* Rounded borders for images */
-}
-
-.date {
-  color: #9e9e9e; /* Material Design gray */
-  font-size: 0.8em;
-  margin-bottom: 5px;
-}
-
-.description {
-  color: #757575; /* Material Design gray */
-  font-size: 0.9em;
-}
-    .month-header {
-      font-size: 1.5rem;
-      color: #3f51b5;
-      margin-top: 40px;
-    }
-.navigation {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.navigation button {
-    margin: 0 10px;
-    padding: 8px 15px;
-    background-color: #3f51b5; /* Example color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poesie che sto imparando</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+        p.subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .poetry-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .poetry {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .poetry:nth-child(odd) {
+            background-color: #fffbf0;
+            font-family: 'Georgia', serif;
+        }
+        .poetry:nth-child(even) {
+            background-color: #eef7ff;
+            font-family: 'Courier New', monospace;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
+    <h1>Poesie che sto imparando</h1>
+    <p class="subtitle">Un piccolo esperimento mnemonico iniziato a gennaio 2025: imparare due poesie al mese.</p>
+ <div class="poetry-container">
+        <div class="poetry">
+            <h2>Se tu ora bussassi alla mia porta</h2>
+            <p>Patrizia Cavalli</p>
+        </div>
+        <div class="poetry">
+            <h2>Annabel Lee</h2>
+            <p>Edgar Allan Poe</p>
+        </div>
+        <div class="poetry">
+            <h2>Abitare la notte</h2>
+            <p>Autore sconosciuto</p>
+        </div>
+    </div>
+</body>
+</html>
 
-<div class="navigation">
-    <button onclick="window.location.href='index.html'">Home</button>
-</div>
-  <div class="container">
-    <h1>Train memory by learning poems.</h1>
-    <p>
-      
-    </p>
-<div class="month-header">January 2025</div>
-<br><br><br>
-  
-  <div class="gallery">
- <!-- January -->
-
+<!--
   <div class="poem">
           <h3>La pioggia nel pineto</h3>
           <h5>Gabriele D'annunzio</h5>
@@ -366,8 +336,6 @@ Verrà la morte e avrà i tuoi occhi
      </div>
   </div>
 
-    
-       <!-- 
       <div class="sketch">
             <h3>Annabel Lee</h3>
             <h5>Edgar Allan Poe</h5>
@@ -420,11 +388,3 @@ And so, all the night-tide, I lie down by the side<br>
    In her tomb by the sounding sea.<br>
             </div>
 -->
-      
-            <div class="date">February 2025</div>
-        </div>
-    </div>
-</div>
-  
-</body>
-</html>

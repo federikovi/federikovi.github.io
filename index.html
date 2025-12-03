@@ -676,6 +676,266 @@ body.dark-mode code {
       </div>
   </div>
 </div>
+
+
+<!-- CARD -->
+<div class="card" data-tags="file" onclick="openModal('modalEstensioni')">
+  <div class="card-image">📄</div>
+  <div class="card-body">
+      <div class="card-title">Estensioni File</div>
+      <div class="card-tags">
+          <span class="tag file">File</span>
+      </div>
+      <div class="card-description">Capire i tipi di file dal nome</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modalEstensioni" class="modal" onclick="closeModalOutside(event, 'modalEstensioni')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('modalEstensioni')">✕</button>
+      <h2 class="modal-title">📄 Estensioni File</h2>
+      <div class="modal-steps">
+          <h3 style="margin-bottom: 15px;">Cos'è un'estensione?</h3>
+          <p style="margin-bottom: 20px;">L'estensione è la parte finale del nome di un file, dopo il punto. Dice al computer che tipo di file è!</p>
+          
+          <p style="margin-bottom: 20px;"><strong>Esempio:</strong> <code>documento.docx</code> → l'estensione è <code>.docx</code> (file Word)</p>
+          
+          <h3 style="margin-bottom: 15px;">📝 DOCUMENTI</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li><strong>.txt</strong> → Testo semplice (Blocco Note)</li>
+              <li><strong>.docx</strong> → Documento Word</li>
+              <li><strong>.pdf</strong> → Documento universale (non modificabile)</li>
+              <li><strong>.odt</strong> → Documento LibreOffice</li>
+          </ul>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">🖼️ IMMAGINI</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li><strong>.jpg / .jpeg</strong> → Foto (buona qualità, poco spazio)</li>
+              <li><strong>.png</strong> → Immagine (sfondo trasparente possibile)</li>
+              <li><strong>.gif</strong> → Immagine animata</li>
+              <li><strong>.svg</strong> → Grafica vettoriale (scalabile)</li>
+          </ul>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">🎵 AUDIO & VIDEO</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li><strong>.mp3</strong> → File audio</li>
+              <li><strong>.wav</strong> → Audio alta qualità</li>
+              <li><strong>.mp4</strong> → Video</li>
+              <li><strong>.avi</strong> → Video Windows</li>
+          </ul>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">💻 ALTRI</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li><strong>.xlsx</strong> → Foglio Excel</li>
+              <li><strong>.pptx</strong> → Presentazione PowerPoint</li>
+              <li><strong>.html</strong> → Pagina web</li>
+              <li><strong>.zip</strong> → File compresso/archivio</li>
+          </ul>
+          
+          <div class="modal-tip">
+              💡 <strong>Come vederle:</strong> Windows: Esplora File → Vista → ✓ Estensioni | Mac: Finder → Preferenze → ✓ Mostra estensioni
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- CARD -->
+<div class="card" data-tags="feedback collaborazione" onclick="openModal('modalFeedback')">
+  <div class="card-image feedback">🍔</div>
+  <div class="card-body">
+      <div class="card-title">Dare Feedback</div>
+      <div class="card-tags">
+          <span class="tag feedback">Feedback</span>
+      </div>
+      <div class="card-description">Il metodo hamburger per aiutare i compagni</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modalFeedback" class="modal" onclick="closeModalOutside(event, 'modalFeedback')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('modalFeedback')">✕</button>
+      <h2 class="modal-title">🍔 Metodo Hamburger</h2>
+      <div class="modal-steps">
+          <h3 style="margin-bottom: 15px;">Cos'è?</h3>
+          <p style="margin-bottom: 20px;">Il metodo hamburger è un modo gentile ed efficace di dare feedback (consigli) ai compagni!</p>
+          
+          <h3 style="margin-bottom: 15px;">📚 La struttura (come un hamburger!):</h3>
+          
+          <div style="background: #fff8e1; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #ffa726;">
+              <h4 style="margin-bottom: 10px;">🍞 PANE SOPRA (Positivo)</h4>
+              <p style="margin-bottom: 10px;">Inizia con qualcosa di <strong>positivo</strong> che ti piace del loro lavoro.</p>
+              <p style="font-style: italic; color: #666;">"Mi piace molto come hai organizzato i titoli!"</p>
+          </div>
+          
+          <div style="background: #ffebee; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #ef5350;">
+              <h4 style="margin-bottom: 10px;">🥩 CARNE (Suggerimento)</h4>
+              <p style="margin-bottom: 10px;">Dai il <strong>suggerimento</strong> o la <strong>critica costruttiva</strong>.</p>
+              <p style="font-style: italic; color: #666;">"Potresti aggiungere più paragrafi per rendere il testo più leggibile."</p>
+          </div>
+          
+          <div style="background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #66bb6a;">
+              <h4 style="margin-bottom: 10px;">🍞 PANE SOTTO (Incoraggiamento)</h4>
+              <p style="margin-bottom: 10px;">Finisci con un <strong>incoraggiamento</strong> positivo.</p>
+              <p style="font-style: italic; color: #666;">"Con questa modifica sarà perfetto!"</p>
+          </div>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">✅ ESEMPIO COMPLETO</h3>
+          <div style="background: #f5f5f5; padding: 20px; border-radius: 8px;">
+              <p style="margin-bottom: 10px;">🍞 "Il tuo HTML è ben strutturato e i titoli sono chiari!"</p>
+              <p style="margin-bottom: 10px;">🥩 "Però mancano alcune liste puntate per gli ingredienti. Potresti usare il tag <code>&lt;ul&gt;</code>."</p>
+              <p>🍞 "Con questo miglioramento la tua ricetta sarà perfetta!"</p>
+          </div>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">❌ COSA NON FARE</h3>
+          <ul style="margin-left: 20px; line-height: 2; color: #d32f2f;">
+              <li>❌ "Questo fa schifo"</li>
+              <li>❌ "Hai sbagliato tutto"</li>
+              <li>❌ Solo critiche senza dire cosa va bene</li>
+              <li>❌ Essere vaghi: "Miglioralo" (come??)</li>
+          </ul>
+          
+          <div class="modal-tip">
+              💡 <strong>Ricorda:</strong> Il feedback serve ad AIUTARE, non a criticare! Sii gentile e specifico.
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- CARD -->
+<div class="card" data-tags="logica giochi" onclick="openModal('modalSudoku')">
+  <div class="card-image">🔢</div>
+  <div class="card-body">
+      <div class="card-title">Come fare un Sudoku</div>
+      <div class="card-tags">
+          <span class="tag">Logica</span>
+      </div>
+      <div class="card-description">Imparare a risolvere i sudoku</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modalSudoku" class="modal" onclick="closeModalOutside(event, 'modalSudoku')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('modalSudoku')">✕</button>
+      <h2 class="modal-title">🔢 Come fare un Sudoku</h2>
+      <div class="modal-steps">
+          <h3 style="margin-bottom: 15px;">Cos'è un Sudoku?</h3>
+          <p style="margin-bottom: 20px;">Un puzzle logico con una griglia 9x9 divisa in 9 riquadri 3x3. Devi riempire ogni cella con numeri da 1 a 9.</p>
+          
+          <h3 style="margin-bottom: 15px;">📜 LE REGOLE</h3>
+          <ol style="margin-left: 20px; line-height: 2;">
+              <li>Ogni <strong>riga</strong> deve contenere i numeri da 1 a 9 (senza ripetizioni)</li>
+              <li>Ogni <strong>colonna</strong> deve contenere i numeri da 1 a 9 (senza ripetizioni)</li>
+              <li>Ogni <strong>riquadro 3x3</strong> deve contenere i numeri da 1 a 9 (senza ripetizioni)</li>
+          </ol>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">🎯 STRATEGIA BASE</h3>
+          <ol style="margin-left: 20px; line-height: 2;">
+              <li><strong>Cerca i numeri facili:</strong> Guarda dove manca un solo numero in una riga/colonna/riquadro</li>
+              <li><strong>Processo di eliminazione:</strong> Quali numeri NON possono stare in quella cella?</li>
+              <li><strong>Segna le possibilità:</strong> Scrivi piccoli i numeri possibili in ogni cella vuota</li>
+              <li><strong>Inizia dai numeri più frequenti:</strong> Se vedi tanti 5, cerca dove mettere gli altri 5</li>
+          </ol>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">💡 TRUCCHI</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li>Inizia dalle righe/colonne/riquadri con più numeri già inseriti</li>
+              <li>Usa una matita (per cancellare gli errori!)</li>
+              <li>Non tirare a indovinare: usa sempre la logica</li>
+              <li>Se sei bloccato, cambia zona della griglia</li>
+          </ul>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">🌐 SITI UTILI</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li><strong>websudoku.com</strong> → Sudoku online con vari livelli</li>
+              <li><strong>sudoku.com</strong> → Con timer e statistiche</li>
+          </ul>
+          
+          <div class="modal-tip">
+              💡 <strong>Benefici:</strong> Il Sudoku migliora la concentrazione, la logica e la pazienza!
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- CARD -->
+<div class="card" data-tags="file screenshot" onclick="openModal('modalScreenshot')">
+  <div class="card-image">📸</div>
+  <div class="card-body">
+      <div class="card-title">Fare Screenshot</div>
+      <div class="card-tags">
+          <span class="tag file">File</span>
+      </div>
+      <div class="card-description">Catturare lo schermo del computer</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modalScreenshot" class="modal" onclick="closeModalOutside(event, 'modalScreenshot')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('modalScreenshot')">✕</button>
+      <h2 class="modal-title">📸 Fare Screenshot</h2>
+      <div class="modal-steps">
+          <h3 style="margin-bottom: 15px;">Cos'è uno screenshot?</h3>
+          <p style="margin-bottom: 20px;">Uno screenshot è una "foto" di quello che vedi sullo schermo del computer.</p>
+          
+          <h3 style="margin-bottom: 15px;">💻 WINDOWS</h3>
+          
+          <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 15px 0;">
+              <h4 style="margin-bottom: 10px;"><strong>Metodo 1: Strumento di cattura</strong> (CONSIGLIATO)</h4>
+              <ol style="margin-left: 20px; line-height: 2;">
+                  <li>Premi <code>Win + Shift + S</code></li>
+                  <li>Lo schermo diventa grigio</li>
+                  <li>Seleziona l'area da catturare con il mouse</li>
+                  <li>L'immagine viene copiata (poi incolla con <code>Ctrl + V</code>)</li>
+              </ol>
+          </div>
+          
+          <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+              <h4 style="margin-bottom: 10px;"><strong>Metodo 2: Tutto lo schermo</strong></h4>
+              <ol style="margin-left: 20px; line-height: 2;">
+                  <li>Premi il tasto <code>Stamp</code> (o <code>PrtScn</code>)</li>
+                  <li>Apri Paint o Word</li>
+                  <li>Incolla con <code>Ctrl + V</code></li>
+                  <li>Salva l'immagine</li>
+              </ol>
+          </div>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">🍎 MAC</h3>
+          
+          <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 15px 0;">
+              <h4 style="margin-bottom: 10px;"><strong>Metodo 1: Area selezionata</strong> (CONSIGLIATO)</h4>
+              <ol style="margin-left: 20px; line-height: 2;">
+                  <li>Premi <code>Shift + Cmd + 4</code></li>
+                  <li>Seleziona l'area con il mouse</li>
+                  <li>L'immagine viene salvata sul Desktop</li>
+              </ol>
+          </div>
+          
+          <div style="background: #fff3e0; padding: 15px; border-radius: 8px; margin: 15px 0;">
+              <h4 style="margin-bottom: 10px;"><strong>Metodo 2: Tutto lo schermo</strong></h4>
+              <ol style="margin-left: 20px; line-height: 2;">
+                  <li>Premi <code>Shift + Cmd + 3</code></li>
+                  <li>L'immagine viene salvata sul Desktop</li>
+              </ol>
+          </div>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">📱 CHROMEBOOK</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li><code>Ctrl + Mostra finestre</code> → Tutto lo schermo</li>
+              <li><code>Ctrl + Shift + Mostra finestre</code> → Area selezionata</li>
+          </ul>
+          
+          <div class="modal-tip">
+              💡 <strong>Quando usare gli screenshot:</strong> Per mostrare errori alla prof, salvare risultati (typing test!), condividere informazioni.
+          </div>
+      </div>
+  </div>
+</div>
         
         <!-- AGGIUNGI ALTRE CARD QUI -->
 

@@ -257,7 +257,11 @@ body.dark-mode code {
         .tag.file { background: #f3e5f5; color: #6a1b9a; }
         .tag.email { background: #fce4ec; color: #c2185b; }
         .tag.feedback { background: #ffebee; color: #d32f2f; }
-        
+        .tag.shortcuts { background: #e1f5fe; color: #01579b; }
+.tag.logica { background: #f3e5f5; color: #6a1b9a; }
+.tag.collaborazione { background: #fff9c4; color: #f57f17; }
+.tag.screenshot { background: #e0f2f1; color: #00695c; }
+
         .card-description {
             color: #666;
             line-height: 1.6;
@@ -482,6 +486,7 @@ body.dark-mode code {
             <button class="filter-btn" data-tag="file" onclick="filterByTag('file')">📁 File</button>
             <button class="filter-btn" data-tag="email" onclick="filterByTag('email')">✉️ Email</button>
             <button class="filter-btn" data-tag="html" onclick="filterByTag('html')">🌐 HTML</button>
+            <button class="filter-btn" data-tag="shortcuts" onclick="filterByTag('shortcuts')">⚡ Shortcuts</button>
         </div>
         
         <div class="accessibility-btns">
@@ -608,8 +613,74 @@ body.dark-mode code {
               <div class="card-description">Hai un suggerimento? Mandami un'email!</div>
           </div>
       </div>
+
+
+      <!-- CARD -->
+<div class="card" data-tags="shortcuts" onclick="openModal('modalShortcuts')">
+  <div class="card-image">⚡</div>
+  <div class="card-body">
+      <div class="card-title">Shortcuts Tastiera</div>
+      <div class="card-tags">
+          <span class="tag shortcuts">Shortcuts</span>
+      </div>
+      <div class="card-description">Comandi veloci per lavorare più in fretta</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modalShortcuts" class="modal" onclick="closeModalOutside(event, 'modalShortcuts')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('modalShortcuts')">✕</button>
+      <h2 class="modal-title">⚡ Shortcuts Tastiera</h2>
+      <div class="modal-steps">
+          <h3 style="margin-bottom: 15px;">Cosa sono?</h3>
+          <p style="margin-bottom: 20px;">Gli shortcuts (scorciatoie) sono combinazioni di tasti che ti fanno risparmiare tempo!</p>
+          
+          <h3 style="margin-bottom: 15px;">📋 EDITING BASE</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li><strong>Ctrl + C</strong> (Mac: Cmd + C) → Copia</li>
+              <li><strong>Ctrl + V</strong> (Mac: Cmd + V) → Incolla</li>
+              <li><strong>Ctrl + X</strong> (Mac: Cmd + X) → Taglia</li>
+              <li><strong>Ctrl + Z</strong> (Mac: Cmd + Z) → Annulla</li>
+              <li><strong>Ctrl + Y</strong> (Mac: Cmd + Shift + Z) → Ripeti</li>
+              <li><strong>Ctrl + A</strong> (Mac: Cmd + A) → Seleziona tutto</li>
+          </ul>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">💾 FILE</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li><strong>Ctrl + S</strong> (Mac: Cmd + S) → Salva</li>
+              <li><strong>Ctrl + O</strong> (Mac: Cmd + O) → Apri file</li>
+              <li><strong>Ctrl + P</strong> (Mac: Cmd + P) → Stampa</li>
+              <li><strong>Ctrl + W</strong> (Mac: Cmd + W) → Chiudi finestra</li>
+          </ul>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">🌐 BROWSER</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li><strong>Ctrl + T</strong> (Mac: Cmd + T) → Nuova scheda</li>
+              <li><strong>Ctrl + Tab</strong> → Cambia scheda</li>
+              <li><strong>Ctrl + F</strong> (Mac: Cmd + F) → Cerca nella pagina</li>
+              <li><strong>Ctrl + D</strong> (Mac: Cmd + D) → Aggiungi preferito</li>
+              <li><strong>F5</strong> (Mac: Cmd + R) → Aggiorna pagina</li>
+          </ul>
+          
+          <h3 style="margin-top: 25px; margin-bottom: 15px;">✏️ TESTO</h3>
+          <ul style="margin-left: 20px; line-height: 2;">
+              <li><strong>Ctrl + B</strong> (Mac: Cmd + B) → Grassetto</li>
+              <li><strong>Ctrl + I</strong> (Mac: Cmd + I) → Corsivo</li>
+              <li><strong>Ctrl + U</strong> (Mac: Cmd + U) → Sottolineato</li>
+          </ul>
+          
+          <div class="modal-tip">
+              💡 <strong>Esercizio:</strong> Prova a usare SOLO gli shortcuts per 10 minuti. Diventerai velocissimo!
+          </div>
+      </div>
+  </div>
+</div>
         
         <!-- AGGIUNGI ALTRE CARD QUI -->
+
+
+        
     </div>
     
     <div class="no-results" id="noResults">

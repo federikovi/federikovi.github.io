@@ -473,18 +473,78 @@
                 <div class="card-description">Scrivere email professionali</div>
             </div>
         </div>
+
+        <!-- CARD HTML 1: CodePen -->
+        <div class="card" data-tags="html" onclick="openModal('modal4')">
+          <div class="card-image html">💻</div>
+          <div class="card-body">
+              <div class="card-title">Come usare CodePen</div>
+              <div class="card-tags">
+                  <span class="tag html">HTML</span>
+              </div>
+              <div class="card-description">Editor online per scrivere HTML</div>
+          </div>
+      </div>
+      
+      <!-- CARD HTML 2: Titoli -->
+      <div class="card" data-tags="html" onclick="openModal('modal5')">
+          <div class="card-image html">📌</div>
+          <div class="card-body">
+              <div class="card-title">HTML: Titoli</div>
+              <div class="card-tags">
+                  <span class="tag html">HTML</span>
+              </div>
+              <div class="card-description">Creare titoli con H1, H2, H3</div>
+          </div>
+      </div>
+      
+      <!-- CARD HTML 3: Paragrafi -->
+      <div class="card" data-tags="html" onclick="openModal('modal6')">
+          <div class="card-image html">📝</div>
+          <div class="card-body">
+              <div class="card-title">HTML: Paragrafi</div>
+              <div class="card-tags">
+                  <span class="tag html">HTML</span>
+              </div>
+              <div class="card-description">Scrivere paragrafi con il tag P</div>
+          </div>
+      </div>
+      
+      <!-- CARD HTML 4: Liste -->
+      <div class="card" data-tags="html" onclick="openModal('modal7')">
+          <div class="card-image html">📋</div>
+          <div class="card-body">
+              <div class="card-title">HTML: Liste puntate</div>
+              <div class="card-tags">
+                  <span class="tag html">HTML</span>
+              </div>
+              <div class="card-description">Creare elenchi con UL e LI</div>
+          </div>
+      </div>
+      
+      <!-- CARD HTML 5: Struttura -->
+      <div class="card" data-tags="html" onclick="openModal('modal8')">
+          <div class="card-image html">🏗️</div>
+          <div class="card-body">
+              <div class="card-title">HTML: Struttura base</div>
+              <div class="card-tags">
+                  <span class="tag html">HTML</span>
+              </div>
+              <div class="card-description">La struttura completa di una pagina</div>
+          </div>
+      </div>
         
         <!-- CARD FEEDBACK -->
         <div class="card" data-tags="feedback" onclick="openFeedbackEmail()">
-            <div class="card-image feedback">💬</div>
-            <div class="card-body">
-                <div class="card-title">Invia Feedback</div>
-                <div class="card-tags">
-                    <span class="tag feedback">Feedback</span>
-                </div>
-                <div class="card-description">Hai un suggerimento? Mandami un'email!</div>
-            </div>
-        </div>
+          <div class="card-image feedback">💬</div>
+          <div class="card-body">
+              <div class="card-title">Invia Feedback</div>
+              <div class="card-tags">
+                  <span class="tag feedback">Feedback</span>
+              </div>
+              <div class="card-description">Hai un suggerimento? Mandami un'email!</div>
+          </div>
+      </div>
         
         <!-- AGGIUNGI ALTRE CARD QUI -->
     </div>
@@ -580,6 +640,231 @@
             </div>
         </div>
     </div>
+
+        <!-- MODALS HTML -->
+        <div id="modal4" class="modal" onclick="closeModalOutside(event, 'modal4')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+              <button class="modal-close" onclick="closeModal('modal4')">✕</button>
+              <h2 class="modal-title">💻 Come usare CodePen</h2>
+              <div class="modal-steps">
+                  <ol>
+                      <li>Vai su <strong>codepen.io</strong></li>
+                      <li>Clicca <strong>"Start Coding"</strong> (non serve account per provare)</li>
+                      <li>Vedrai 3 box:
+                          <ul style="margin-top: 10px;">
+                              <li><strong>HTML</strong> - dove scrivi il codice</li>
+                              <li><strong>CSS</strong> - per i colori (ignora per ora)</li>
+                              <li><strong>JS</strong> - per animazioni (ignora per ora)</li>
+                          </ul>
+                      </li>
+                      <li>In basso vedrai l'<strong>anteprima</strong> di quello che scrivi</li>
+                      <li>Scrivi nel box HTML e vedrai il risultato in tempo reale!</li>
+                      <li>Per salvare: clicca <strong>"Save"</strong> (serve account gratuito)</li>
+                  </ol>
+                  <div class="modal-tip">
+                      💡 <strong>Trucco:</strong> Copia il tuo testo dal Google Doc, poi aggiungi i tag HTML su CodePen!
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div id="modal5" class="modal" onclick="closeModalOutside(event, 'modal5')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal('modal5')">✕</button>
+            <h2 class="modal-title">📌 HTML: Titoli</h2>
+            <div class="modal-steps">
+                <h3 style="margin-bottom: 15px;">Cosa sono i titoli?</h3>
+                <p style="margin-bottom: 20px;">I titoli servono per organizzare il testo. Ci sono 6 livelli, da H1 (più grande) a H6 (più piccolo).</p>
+                
+                <h3 style="margin-bottom: 15px;">Come si scrivono:</h3>
+                <div class="code-example">
+&lt;h1&gt;Titolo Principale&lt;/h1&gt;<br>
+&lt;h2&gt;Sottotitolo&lt;/h2&gt;<br>
+&lt;h3&gt;Sottotitolo più piccolo&lt;/h3&gt;
+                </div>
+                
+                <h3 style="margin-bottom: 15px;">Esempio percorso scuola:</h3>
+                <div class="code-example">
+&lt;h1&gt;Come arrivo a scuola&lt;/h1&gt;<br>
+&lt;h2&gt;Da Mestre&lt;/h2&gt;<br>
+&lt;h3&gt;Il percorso&lt;/h3&gt;
+                </div>
+                
+                <h3 style="margin-bottom: 15px;">Esempio ricetta:</h3>
+                <div class="code-example">
+&lt;h1&gt;Pasta alla Carbonara&lt;/h1&gt;<br>
+&lt;h2&gt;Ingredienti&lt;/h2&gt;<br>
+&lt;h2&gt;Preparazione&lt;/h2&gt;
+                </div>
+                
+                <div class="modal-tip">
+                    💡 <strong>Regola importante:</strong> Usa UN SOLO H1 per pagina (il titolo principale). Per tutto il resto usa H2, H3, ecc.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal6" class="modal" onclick="closeModalOutside(event, 'modal6')">
+      <div class="modal-content" onclick="event.stopPropagation()">
+          <button class="modal-close" onclick="closeModal('modal6')">✕</button>
+          <h2 class="modal-title">📝 HTML: Paragrafi</h2>
+          <div class="modal-steps">
+              <h3 style="margin-bottom: 15px;">Cosa sono i paragrafi?</h3>
+              <p style="margin-bottom: 20px;">I paragrafi sono blocchi di testo. Ogni paragrafo inizia con <code>&lt;p&gt;</code> e finisce con <code>&lt;/p&gt;</code>.</p>
+              
+              <h3 style="margin-bottom: 15px;">Come si scrivono:</h3>
+              <div class="code-example">
+&lt;p&gt;Questo è un paragrafo di testo.&lt;/p&gt;<br>
+&lt;p&gt;Questo è un altro paragrafo.&lt;/p&gt;
+              </div>
+              
+              <h3 style="margin-bottom: 15px;">Esempio percorso scuola:</h3>
+              <div class="code-example">
+&lt;h2&gt;Il mio percorso&lt;/h2&gt;<br>
+&lt;p&gt;Ogni giorno parto da casa alle 7:30.&lt;/p&gt;<br>
+&lt;p&gt;Prendo il bus numero 5 verso la stazione.&lt;/p&gt;<br>
+&lt;p&gt;Il viaggio dura circa 20 minuti.&lt;/p&gt;
+              </div>
+              
+              <h3 style="margin-bottom: 15px;">Esempio ricetta:</h3>
+              <div class="code-example">
+&lt;h2&gt;Preparazione&lt;/h2&gt;<br>
+&lt;p&gt;Metti l'acqua a bollire in una pentola grande.&lt;/p&gt;<br>
+&lt;p&gt;Quando bolle, aggiungi il sale e la pasta.&lt;/p&gt;<br>
+&lt;p&gt;Cuoci per 10 minuti.&lt;/p&gt;
+              </div>
+              
+              <div class="modal-tip">
+                  💡 <strong>Trucco:</strong> Ogni volta che vai a capo nel tuo testo, è un nuovo paragrafo!
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div id="modal7" class="modal" onclick="closeModalOutside(event, 'modal7')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeModal('modal7')">✕</button>
+        <h2 class="modal-title">📋 HTML: Liste puntate</h2>
+        <div class="modal-steps">
+            <h3 style="margin-bottom: 15px;">Cosa sono le liste?</h3>
+            <p style="margin-bottom: 20px;">Le liste servono per elencare cose. Si usano quando hai più elementi da elencare.</p>
+            
+            <h3 style="margin-bottom: 15px;">Come si scrivono:</h3>
+            <div class="code-example">
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Primo elemento&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Secondo elemento&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Terzo elemento&lt;/li&gt;<br>
+&lt;/ul&gt;
+            </div>
+            
+            <p style="margin: 15px 0;"><strong>Spiegazione:</strong></p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><code>&lt;ul&gt;</code> = inizia la lista (unordered list)</li>
+                <li><code>&lt;li&gt;</code> = ogni punto della lista (list item)</li>
+                <li><code>&lt;/ul&gt;</code> = chiude la lista</li>
+            </ul>
+            
+            <h3 style="margin-bottom: 15px;">Esempio percorso scuola:</h3>
+            <div class="code-example">
+&lt;h2&gt;Mezzi che uso&lt;/h2&gt;<br>
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Bus numero 5&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Treno regionale&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;A piedi per 5 minuti&lt;/li&gt;<br>
+&lt;/ul&gt;
+            </div>
+
+            <h3 style="margin-bottom: 15px;">Esempio ricetta:</h3>
+            <div class="code-example">
+&lt;h2&gt;Ingredienti&lt;/h2&gt;<br>
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;400g spaghetti&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;150g guanciale&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;4 tuorli&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Pecorino q.b.&lt;/li&gt;<br>
+&lt;/ul&gt;
+            </div>
+            
+            <div class="modal-tip">
+                💡 <strong>Ricorda:</strong> Ogni <code>&lt;li&gt;</code> deve essere dentro <code>&lt;ul&gt;</code>!
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal8" class="modal" onclick="closeModalOutside(event, 'modal8')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeModal('modal8')">✕</button>
+        <h2 class="modal-title">🏗️ HTML: Struttura base</h2>
+        <div class="modal-steps">
+            <h3 style="margin-bottom: 15px;">La struttura completa</h3>
+            <p style="margin-bottom: 20px;">Ogni pagina HTML ha questa struttura. Per ora su CodePen scriviamo solo quello che va dentro <code>&lt;body&gt;</code>, ma è importante conoscerla!</p>
+            
+            <div class="code-example">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="it"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;Titolo della pagina&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+<br>
+
+&nbsp;&nbsp;&lt;!-- QUI VA IL TUO CONTENUTO --&gt;<br>
+&nbsp;&nbsp;&lt;h1&gt;Ciao mondo!&lt;/h1&gt;<br>
+&nbsp;&nbsp;&lt;p&gt;Questa è la mia prima pagina.&lt;/p&gt;<br>
+<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+                </div>
+                
+                <h3 style="margin-bottom: 15px; margin-top: 25px;">Esempio completo percorso:</h3>
+                <div class="code-example">
+&lt;h1&gt;Come arrivo a scuola&lt;/h1&gt;<br>
+<br>
+&lt;h2&gt;Da Mestre&lt;/h2&gt;<br>
+&lt;p&gt;Parto da casa alle 7:30 ogni mattina.&lt;/p&gt;<br>
+<br>
+&lt;h2&gt;Mezzi che uso&lt;/h2&gt;<br>
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Bus numero 5 (15 minuti)&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Treno regionale (20 minuti)&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;A piedi (5 minuti)&lt;/li&gt;<br>
+&lt;/ul&gt;<br>
+<br>
+&lt;h2&gt;Consigli&lt;/h2&gt;<br>
+&lt;p&gt;Parti presto perché il treno è spesso in ritardo!&lt;/p&gt;
+                </div>
+                
+                <h3 style="margin-bottom: 15px; margin-top: 25px;">Esempio completo ricetta:</h3>
+                <div class="code-example">
+
+
+&lt;h1&gt;Pasta alla Carbonara&lt;/h1&gt;<br>
+<br>
+&lt;p&gt;Una ricetta romana classica e veloce.&lt;/p&gt;<br>
+<br>
+&lt;h2&gt;Ingredienti&lt;/h2&gt;<br>
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;400g spaghetti&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;150g guanciale&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;4 tuorli&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Pecorino romano&lt;/li&gt;<br>
+&lt;/ul&gt;<br>
+<br>
+&lt;h2&gt;Preparazione&lt;/h2&gt;<br>
+&lt;p&gt;Metti l'acqua a bollire.&lt;/p&gt;<br>
+&lt;p&gt;Taglia il guanciale a cubetti e rosolalo.&lt;/p&gt;<br>
+&lt;p&gt;Cuoci la pasta al dente.&lt;/p&gt;
+                </div>
+                
+                <div class="modal-tip">
+                    💡 <strong>Il tuo compito:</strong> Prendi il tuo testo dal Google Doc e aggiungici i tag HTML che hai imparato!
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         let currentTag = 'tutti';

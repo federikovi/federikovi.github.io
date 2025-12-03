@@ -1,58 +1,667 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-  <title>federikovi</title>
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .navigation {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 20px;
-      width: auto;
-    }
-
-    .navigation button {
-      width: 180px;
-      margin:50px;
-      height: 100px;
-      border: none;
-      font-size: 1.5rem;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 15px;
-      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
-    }
-
-    .navigation button:hover {
-      transform: scale(1.05);
-      box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
-      filter: brightness(1.1);
-    }
-
-    .sketches { background-color: #FFDDC1; } /* Pastel Peach */
-    .poems { background-color: #C1E1C1; } /* Pastel Green */
-    .manchester { background-color: #C1DFF0; } /* Pastel Blue */
-    .stockholm { background-color: #F0C1E1; } /* Pastel Pink */
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Tutorial Informatica - IPSSEOA Andrea Barbarigo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            transition: all 0.3s;
+            line-height: 1.6;
+        }
+        
+        body.dark-mode {
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+        
+        body.high-spacing {
+            line-height: 2.2;
+        }
+        
+        body.high-spacing .modal-steps ol {
+            line-height: 2.8;
+        }
+        
+        .top-controls {
+            max-width: 1200px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        body.dark-mode .filter-btn {
+            background: #2a2a2a;
+            color: #e0e0e0;
+            border-color: #3a3a3a;
+        }
+        
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .accessibility-btns {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .access-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .access-btn:hover {
+            background: #5568d3;
+        }
+        
+        .access-btn.active {
+            background: #764ba2;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        body.dark-mode .header h1 {
+            color: #e0e0e0;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        body.dark-mode .subtitle {
+            color: #a0a0a0;
+        }
+        
+        .gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding-bottom: 50px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        body.dark-mode .card {
+            background: #2a2a2a;
+        }
+        
+        .card.hidden {
+            display: none;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .card-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+        }
+        
+        .card-image.feedback {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .card-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        body.dark-mode .card-title {
+            color: #e0e0e0;
+        }
+        
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 600;
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .tag.classroom { background: #fff3e0; color: #e65100; }
+        .tag.google { background: #e8f5e9; color: #2e7d32; }
+        .tag.file { background: #f3e5f5; color: #6a1b9a; }
+        .tag.email { background: #fce4ec; color: #c2185b; }
+        .tag.feedback { background: #ffebee; color: #d32f2f; }
+        
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        body.dark-mode .card-description {
+            color: #a0a0a0;
+        }
+        
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 40px;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 100%;
+            padding: 50px;
+            position: relative;
+        }
+        
+        body.dark-mode .modal-content {
+            background: #2a2a2a;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #999;
+            padding: 10px;
+        }
+        
+        .modal-close:hover {
+            color: #333;
+        }
+        
+        body.dark-mode .modal-close:hover {
+            color: #fff;
+        }
+        
+        .modal-title {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        
+        body.dark-mode .modal-title {
+            color: #e0e0e0;
+        }
+        
+        .modal-steps ol {
+            margin-left: 25px;
+            line-height: 2;
+        }
+        
+        .modal-steps li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        body.dark-mode .modal-steps li {
+            color: #e0e0e0;
+        }
+        
+        .modal-steps strong {
+            color: #667eea;
+        }
+        
+        .modal-tip {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            border-left: 4px solid #667eea;
+        }
+        
+        body.dark-mode .modal-tip {
+            background: #1a1a1a;
+            color: #a0a0a0;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+            font-size: 1.2em;
+            display: none;
+        }
+        
+        .no-results.visible {
+            display: block;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        
+        body.dark-mode .footer {
+            background: #2a2a2a;
+        }
+        
+        .footer-section {
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        body.dark-mode .footer-section h3 {
+            color: #64b5f6;
+        }
+        
+        .footer-section p {
+            color: #666;
+            margin: 5px 0;
+            line-height: 1.8;
+        }
+        
+        body.dark-mode .footer-section p {
+            color: #a0a0a0;
+        }
+        
+        .footer-email {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer-email:hover {
+            text-decoration: underline;
+        }
+        
+        .classes-list {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+        body.dark-mode .classes-list {
+            background: #1a3a52;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        body.dark-mode .footer-bottom {
+            border-top-color: #3a3a3a;
+        }
+        
+        @media (max-width: 768px) {
+            .top-controls {
+                flex-direction: column;
+            }
+            
+            .filters, .accessibility-btns {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="navigation">
-    <button class="sketches" onclick="window.location.href='sketches.html'">Sketches</button>
-    <button class="poems" onclick="window.location.href='poems.html'">Poems</button>
-    <button class="manchester" onclick="window.location.href='manchester.html'">Manchester</button>
-    <button class="stockholm" onclick="window.location.href='stockholm.html'">Stockholm</button>
-  </div>
+    <!-- CONTROLS -->
+    <div class="top-controls">
+        <div class="filters">
+            <button class="filter-btn active" data-tag="tutti" onclick="filterByTag('tutti')">📚 Tutti</button>
+            <button class="filter-btn" data-tag="classroom" onclick="filterByTag('classroom')">🏫 Classroom</button>
+            <button class="filter-btn" data-tag="google" onclick="filterByTag('google')">🔍 Google</button>
+            <button class="filter-btn" data-tag="file" onclick="filterByTag('file')">📁 File</button>
+            <button class="filter-btn" data-tag="email" onclick="filterByTag('email')">✉️ Email</button>
+        </div>
+        
+        <div class="accessibility-btns">
+            <button class="access-btn" id="darkModeBtn" onclick="toggleDarkMode()">🌙 Dark</button>
+            <button class="access-btn" id="spacingBtn" onclick="toggleSpacing()">📏 Spazio</button>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>📚 Repository Tutorial Informatica</h1>
+        <p class="subtitle">Tutorial pratici step-by-step</p>
+    </div>
+    
+    <!-- GALLERY -->
+    <div class="gallery" id="gallery">
+        <!-- CARD 1 -->
+        <div class="card" data-tags="classroom google" onclick="openModal('modal1')">
+            <div class="card-image">🏫</div>
+            <div class="card-body">
+                <div class="card-title">Entrare su Classroom</div>
+                <div class="card-tags">
+                    <span class="tag classroom">Classroom</span>
+                    <span class="tag google">Google</span>
+                </div>
+                <div class="card-description">Due modi per accedere: Gmail o link diretto</div>
+            </div>
+        </div>
+        
+        <!-- CARD 2 -->
+        <div class="card" data-tags="classroom file" onclick="openModal('modal2')">
+            <div class="card-image">📎</div>
+            <div class="card-body">
+                <div class="card-title">Consegnare un file</div>
+                <div class="card-tags">
+                    <span class="tag classroom">Classroom</span>
+                    <span class="tag file">File</span>
+                </div>
+                <div class="card-description">Caricare documenti su Classroom</div>
+            </div>
+        </div>
+        
+        <!-- CARD 3 -->
+        <div class="card" data-tags="email google" onclick="openModal('modal3')">
+            <div class="card-image">✉️</div>
+            <div class="card-body">
+                <div class="card-title">Mandare una email</div>
+                <div class="card-tags">
+                    <span class="tag email">Email</span>
+                    <span class="tag google">Google</span>
+                </div>
+                <div class="card-description">Scrivere email professionali</div>
+            </div>
+        </div>
+        
+        <!-- CARD FEEDBACK -->
+        <div class="card" data-tags="feedback" onclick="openFeedbackEmail()">
+            <div class="card-image feedback">💬</div>
+            <div class="card-body">
+                <div class="card-title">Invia Feedback</div>
+                <div class="card-tags">
+                    <span class="tag feedback">Feedback</span>
+                </div>
+                <div class="card-description">Hai un suggerimento? Mandami un'email!</div>
+            </div>
+        </div>
+        
+        <!-- AGGIUNGI ALTRE CARD QUI -->
+    </div>
+    
+    <div class="no-results" id="noResults">
+        😕 Nessun tutorial trovato per questo filtro
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-section">
+            <h3>🏫 IPSSEOA Andrea Barbarigo - Venezia</h3>
+            <p>👩‍🏫 <strong>Prof.ssa Federica Trevisan</strong></p>
+            <p>📚 Tecnologie dell'Informazione e Comunicazione (Informatica)</p>
+            <p>📅 Anno Scolastico 2024/2025</p>
+            <p>📧 <a href="mailto:federica.trevisan@barbarigo.edu.it" class="footer-email">federica.trevisan@barbarigo.edu.it</a></p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>📖 Classi che usano questo sito</h3>
+            <div class="classes-list">
+                <strong>Biennio:</strong> 1A • 1B • 1C • 1D • 1E • 2A • 2B • 2C • 2D • 2E • 2F • 2G
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h3>💬 Feedback e Suggerimenti</h3>
+            <p>Hai idee per migliorare il sito? <a href="mailto:federica.trevisan@barbarigo.edu.it?subject=Feedback%20Repository%20Tutorial" class="footer-email">Mandami una email</a>!</p>
+        </div>
+        
+        <div class="footer-bottom">
+            <p><strong>Ultimo aggiornamento:</strong> 02 Dicembre 2024</p>
+            <p style="margin-top: 10px;">Creato con ❤️ per gli studenti del biennio</p>
+        </div>
+    </div>
+
+    <!-- MODALS -->
+    <div id="modal1" class="modal" onclick="closeModalOutside(event, 'modal1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal('modal1')">✕</button>
+            <h2 class="modal-title">🏫 Entrare su Classroom</h2>
+            <div class="modal-steps">
+                <ol>
+                    <li>Vai su <strong>classroom.google.com</strong></li>
+                    <li>Clicca su <strong>"Vai a Classroom"</strong></li>
+                    <li>Accedi con la tua <strong>Gmail della scuola</strong></li>
+                    <li>Vedrai tutte le tue classi</li>
+                </ol>
+                <div class="modal-tip">
+                    💡 <strong>Alternativa:</strong> Da Gmail, clicca sull'icona dei 9 puntini → Classroom
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal2" class="modal" onclick="closeModalOutside(event, 'modal2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal('modal2')">✕</button>
+            <h2 class="modal-title">📎 Consegnare un file</h2>
+            <div class="modal-steps">
+                <ol>
+                    <li>Apri il <strong>compito</strong> su Classroom</li>
+                    <li>Clicca <strong>"Aggiungi o crea"</strong></li>
+                    <li>Scegli <strong>"File"</strong></li>
+                    <li>Seleziona il file dal tuo computer</li>
+                    <li>Aspetta il caricamento (vedrai barra verde)</li>
+                    <li>Clicca <strong>"Consegna"</strong></li>
+                </ol>
+                <div class="modal-tip">
+                    💡 Assicurati che il file abbia un nome chiaro prima di caricarlo!
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal3" class="modal" onclick="closeModalOutside(event, 'modal3')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal('modal3')">✕</button>
+            <h2 class="modal-title">✉️ Mandare una email</h2>
+            <div class="modal-steps">
+                <ol>
+                    <li>Vai su <strong>mail.google.com</strong></li>
+                    <li>Clicca <strong>"Scrivi"</strong> (in alto a sinistra)</li>
+                    <li>Nel campo <strong>"A"</strong> scrivi l'email del destinatario</li>
+                    <li>Nel campo <strong>"Oggetto"</strong> scrivi di cosa parli</li>
+                    <li>Scrivi il messaggio nel box grande</li>
+                    <li>Se serve, allega file con l'icona 📎</li>
+                    <li>Clicca <strong>"Invia"</strong></li>
+                </ol>
+                <div class="modal-tip">
+                    💡 <strong>Email formale:</strong> Usa saluti ("Gentile Prof."), scrivi chiaro, firma con nome e cognome
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentTag = 'tutti';
+        let darkMode = false;
+        let highSpacing = false;
+
+        function filterByTag(tag) {
+            currentTag = tag;
+            const cards = document.querySelectorAll('.card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            let visibleCount = 0;
+
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.tag === tag) {
+                    btn.classList.add('active');
+                }
+            });
+
+            cards.forEach(card => {
+                const cardTags = card.dataset.tags || '';
+                if (tag === 'tutti' || cardTags.includes(tag)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            const noResults = document.getElementById('noResults');
+            if (visibleCount === 0) {
+                noResults.classList.add('visible');
+            } else {
+                noResults.classList.remove('visible');
+            }
+        }
+
+        function toggleDarkMode() {
+            darkMode = !darkMode;
+            document.body.classList.toggle('dark-mode');
+            const btn = document.getElementById('darkModeBtn');
+            btn.classList.toggle('active');
+            btn.textContent = darkMode ? '☀️ Light' : '🌙 Dark';
+        }
+
+        function toggleSpacing() {
+            highSpacing = !highSpacing;
+            document.body.classList.toggle('high-spacing');
+            const btn = document.getElementById('spacingBtn');
+            btn.classList.toggle('active');
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOutside(event, modalId) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(modalId);
+            }
+        }
+
+        function openFeedbackEmail() {
+            const subject = encodeURIComponent('Feedback Repository Tutorial');
+            const body = encodeURIComponent('Gentile Prof.ssa Trevisan,\n\nvolevo darle un feedback sul sito tutorial:\n\n[Scrivi qui il tuo feedback]\n\nCordiali saluti,\n[Il tuo nome e classe]');
+            window.location.href = `mailto:federica.trevisan@barbarigo.edu.it?subject=${subject}&body=${body}`;
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>
